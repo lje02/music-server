@@ -12,7 +12,7 @@
 set -euo pipefail
 
 # ────────────────────────── 配置区 ──────────────────────────
-REPO="https://github.com/你的用户名/music-server.git"   # ← 改成你的仓库地址
+REPO="https://github.com/lje02/music-server.git"   # ← 改成你的仓库地址
 BRANCH="main"
 INSTALL_DIR="/root/music-server"
 SERVICE_NAME="music-player"
