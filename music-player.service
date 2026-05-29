@@ -1,0 +1,13 @@
+[Unit]
+Description=Music Player Web Server
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/music-server
+ExecStart=/usr/local/bin/gunicorn -w 2 -b 127.0.0.1:5000 app:app
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
