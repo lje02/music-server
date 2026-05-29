@@ -16,7 +16,7 @@ REPO="https://github.com/lje02/music-server.git"   # ← 改成你的仓库地�
 BRANCH="main"
 INSTALL_DIR="/root/music-server"
 SERVICE_NAME="music-player"
-PORT=8080
+PORT=80
 SKIP_NGINX=false
 # ────────────────────────────────────────────────────────────
 
@@ -58,11 +58,7 @@ apt-get update -qq
 apt-get install -y -qq git python3 python3-pip python3-venv curl
 
 if [[ "$SKIP_NGINX" == "false" ]]; then
-  if command -v nginx &>/dev/null; then
-    info "Nginx 已安装，跳过"
-  else
-    apt-get install -y -qq nginx
-  fi
+  apt-get install -y -qq nginx
 fi
 success "系统依赖安装完成"
 
@@ -184,3 +180,4 @@ echo -e "    systemctl status  ${SERVICE_NAME}   # 查看运行状态"
 echo -e "    systemctl restart ${SERVICE_NAME}   # 重启服务"
 echo -e "    journalctl -u     ${SERVICE_NAME} -f  # 实时日志"
 echo ""
+
